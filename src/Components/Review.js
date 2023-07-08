@@ -38,7 +38,8 @@ function Review() {
         setReviews([...reviews, newReview]);
         resetForm(e);
       };
-    
+      // Function to delete a review
+
       const deleteReview = (e, index) => {
         e.preventDefault();
     
