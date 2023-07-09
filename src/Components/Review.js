@@ -14,6 +14,7 @@ function Review() {
   const valueRef = useRef();
   // Initialize ref
   valueRef.current = stars;
+  const inlineStyle = {backgroundColor:"#FFFFFF"};
     // Function to reset the form inputs
 
       const resetForm = (e) => {
@@ -76,7 +77,7 @@ function Review() {
             </Row> 
             <Row className="mt-5">
               <Col>
-              <Rating value={stars} onChange={(event, newValue)=>{
+              <Rating style={inlineStyle} value={stars} onChange={(event, newValue)=>{
                 setStars(newValue);
                 // Get the latest state
           console.log(valueRef.current);
@@ -106,7 +107,7 @@ function Review() {
                 <Button
                   variant="success"
                   onClick={(e) => submitReview(e)}
-                  disabled={review === ""}
+                  disabled={review === "" ||name===""||movieName===""||stars===""}
                 >
                   submit
                 </Button>
